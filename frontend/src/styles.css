@@ -1,26 +1,45 @@
 :root {
   font-family: system-ui, sans-serif;
   line-height: 1.5;
+   --color-primary: #1d4ed8;
+  --color-primary-dark: #1e3a8a;
+  --color-surface: #ffffff;
+  --color-background: #f5f7fb;
+  --color-border: #cbd5e1;
+  --color-text: #1f2937;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+
+  --radius: 0.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
 }
 
+
+
 .site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid #cbd5e1;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
 nav {
-  display: flex;
-  gap: 1rem;
+ margin-top: 1rem;
+}
+nav a {
+  color: var(--color-primary);
+  margin-right: 1rem;
 }
 
 img {
@@ -31,7 +50,8 @@ article,
 fieldset {
   margin: 1rem 0;
   padding: 1rem;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
 }
 
 label {
@@ -42,10 +62,21 @@ label {
 
 input,
 select,
-textarea,
-button {
+textarea {
+ width: 100%;
+  padding: 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
   font: inherit;
-  padding: 0.5rem;
+}
+
+button {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 0.5rem;
+  background: var(--color-primary);
+  color: white;
+  cursor: pointer;
 }
 
 textarea {
@@ -55,4 +86,33 @@ textarea {
 .hint {
   margin-top: 0.25rem;
   color: #475569;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+a:focus {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+main,
+.site-header,
+.site-footer {
+  width: min(1100px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.equipment-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-block: 1rem;
+}
+
+.equipment-card img {
+  max-width: 100%;
+  height: auto;
 }
