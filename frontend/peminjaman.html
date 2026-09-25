@@ -22,85 +22,104 @@
         Isi data berikut. Pada Modul 2 formulir belum disimpan ke backend;
         fokusnya adalah struktur, label, nama data, dan validasi HTML.
       </p>
-      <form action="/peminjaman" method="post">
-  <fieldset>
+       <fieldset>
     <legend>Data peminjam</legend>
-    <label for="nim">NIM</label>
-    <input
-      id="nim"
-      name="nim"
-      type="text"
-      inputmode="numeric"
-      pattern="[0-9]{10}"
-      maxlength="10"
-      required
-    >
 
-    <label for="nama">Nama lengkap</label>
-    <input
-      id="nama"
-      name="nama"
-      type="text"
-      autocomplete="name"
-      minlength="3"
-      required
-    >
+    <div class="form-grid">
+      <div>
+        <label for="nim">NIM</label>
+        <input
+          id="nim"
+          name="nim"
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]{10}"
+          maxlength="10"
+          required
+        >
+      </div>
+
+      <div>
+        <label for="nama">Nama lengkap</label>
+        <input
+          id="nama"
+          name="nama"
+          type="text"
+          autocomplete="name"
+          minlength="3"
+          required
+        >
+      </div>
+    </div>
   </fieldset>
+
   <fieldset>
-  <legend>Detail peminjaman</legend>
-  <label for="alat">Peralatan</label>
-  <select id="alat" name="alat" required>
-    <option value="">-- Pilih peralatan --</option>
-    <option value="multimeter">Mikroskop</option>
-    <option value="router">Tabung Reaksi</option>
-    <option value="kamera">Gelas Beaker</option>
-  </select>
+    <legend>Detail peminjaman</legend>
 
-  <label for="tanggal-pinjam">Tanggal peminjaman</label>
-  <input
-    id="tanggal-pinjam"
-    name="tanggal_pinjam"
-    type="date"
-    required
-  >
+    <div class="form-grid">
+      <div>
+        <label for="alat">Peralatan</label>
+        <select id="alat" name="alat" required>
+          <option value="">-- Pilih peralatan --</option>
+          <option value="multimeter">Mikroskop</option>
+          <option value="router">Tabung Reaksi</option>
+          <option value="kamera">Gelas Beaker</option>
+        </select>
+      </div>
 
-  <label for="durasi">Durasi peminjaman (hari)</label>
-  <p id="durasi-hint" class="hint">Durasi 1 sampai 7 hari.</p>
-  <input
-    id="durasi"
-    name="durasi"
-    type="number"
-    min="1"
-    max="7"
-    aria-describedby="durasi-hint"
-    required
-  >
+      <div>
+        <label for="tanggal-pinjam">Tanggal peminjaman</label>
+        <input
+          id="tanggal-pinjam"
+          name="tanggal_pinjam"
+          type="date"
+          required
+        >
+      </div>
 
-  <label for="keperluan">Keperluan</label>
-  <textarea
-    id="keperluan"
-    name="keperluan"
-    minlength="10"
-    maxlength="300"
-    rows="5"
-    required
-  ></textarea>
-</fieldset>
-<div>
-  <input
-    id="setuju"
-    name="setuju"
-    type="checkbox"
-    value="ya"
-    required
-  >
-  <label for="setuju">
-    Saya menyetujui aturan peminjaman laboratorium.
-  </label>
-</div>
+      <div>
+        <label for="durasi">Durasi peminjaman (hari)</label>
+        <p id="durasi-hint" class="hint">Durasi 1 sampai 7 hari.</p>
+        <input
+          id="durasi"
+          name="durasi"
+          type="number"
+          min="1"
+          max="7"
+          aria-describedby="durasi-hint"
+          required
+        >
+      </div>
 
-<button type="submit">Kirim pengajuan</button>
-</form>
+      <div>
+        <label for="keperluan">Keperluan</label>
+        <textarea
+          id="keperluan"
+          name="keperluan"
+          minlength="10"
+          maxlength="300"
+          rows="5"
+          required
+        ></textarea>
+      </div>
+    </div>
+  </fieldset>
+
+  <div>
+    <input
+      id="setuju"
+      name="setuju"
+      type="checkbox"
+      value="ya"
+      required
+    >
+    <label for="setuju">
+      Saya menyetujui aturan peminjaman laboratorium.
+    </label>
+  </div>
+
+  <button type="submit">Kirim pengajuan</button>
+</main>
     </main>
     <footer>
       <p><a href="/peralatan.html">Kembali ke katalog</a></p>
